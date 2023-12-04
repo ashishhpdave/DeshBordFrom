@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const url = 'mongodb://0.0.0.0:27017/deshbordFrom'
+const url = 'mongodb+srv://sutharpankaj723:pankaj123123@pankaj.dlszltz.mongodb.net/furniture'
 
 function connectDB() {
     try {
