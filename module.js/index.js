@@ -33,7 +33,30 @@ const schema = new mongoose.Schema({
     },
     token: String
 })
+// Subscribe
+const SubscribeSchema = new mongoose.Schema({
 
-const dbmodel = new mongoose.model('user', schema)
 
-module.exports = { dbmodel }
+
+    name: {
+      type: String,
+      required: true
+    },
+  
+    email: {
+      type: String,
+      required: true,
+      unique: true
+    },
+  
+    date: {
+      type: Date,
+      default: Date.now()
+    }
+  })
+
+const subscribeModel = new mongoose.model('subscribe',SubscribeSchema)
+
+const dbmodel = new mongoose.model('AdminAuth', schema)
+
+module.exports = { dbmodel,subscribeModel }

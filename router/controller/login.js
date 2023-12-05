@@ -7,16 +7,14 @@ async function login(req, res) {
     try {
         const token = jwt.sign({ email: data.email }, prifvatekay)
         const isExist = await dbmodel.updateOne({ email: req.body.email, password: req.body.password }, { token })
-
+        // console.log(isExist)
         if (!isExist.modifiedCount) {
             throw new Error("Data not Exist")
         }
         res.status(200).json({
             msg: "Login Successfully",
             status: true,
-            data: {
-                token,
-            }
+            token
         })
     } catch (err) {
         res.status(409).json({
