@@ -1,4 +1,4 @@
-const { dbmodel } = require("../../module.js") 
+const { dbmodel } = require("../../module.js")
 const jwt = require('jsonwebtoken')
 const prifvatekay = "jasbkfghaihkaifasdbBHDBfjaglidsfjaksjd"
 
@@ -28,7 +28,7 @@ async function signup(req, res) {
         if (error.message) {
             res.status(500).json({
                 message: "user Already exists"
-            }) 
+            })
             console.log(error)
         }
         else {
