@@ -54,9 +54,39 @@ const SubscribeSchema = new mongoose.Schema({
       default: Date.now()
     }
   })
+  
+// ContactAPI
+const ContactSchema = new mongoose.Schema({
 
+    f_name: {
+      type: String,
+      required: true
+    },
+  
+    l_name: {
+      type: String,
+      required: true
+    },
+  
+    email: {
+      type: String,
+      required: true,
+      unique: true
+    },
+    message: {
+      type: String,
+      required: true
+    },
+  
+    date: {
+      type: Date,
+      default: Date.now()
+    }
+  })
+
+const contactModel = new mongoose.model('contactsub',ContactSchema)
 const subscribeModel = new mongoose.model('subscribe',SubscribeSchema)
 
-const dbmodel = new mongoose.model('AdminAuth', schema)
+const dbmodel = new mongoose.model('adminAuth', schema)
 
-module.exports = { dbmodel,subscribeModel }
+module.exports = { dbmodel,subscribeModel,contactModel }
