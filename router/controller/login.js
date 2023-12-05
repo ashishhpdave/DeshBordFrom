@@ -14,7 +14,9 @@ async function login(req, res) {
         res.status(200).json({
             msg: "Login Successfully",
             status: true,
-            data: isExist
+            data: {
+                token,
+            }
         })
     } catch (err) {
         res.status(409).json({
