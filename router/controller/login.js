@@ -1,6 +1,6 @@
 const { dbmodel } = require('../../module.js/index')
 const jwt = require('jsonwebtoken')
-const prifvatekay = "jasbkfghaihkaifasdbBHDBfjaglidsfjaksjd"
+const PRIVATEKEY = process.env.PRIVATEKEY
 
 async function login(req, res) {
     const data = req.body
