@@ -18,6 +18,6 @@ router.post('/login', login)
 router.get('/subscribe',subscribeData)
 router.get('/contact',ContactData)
 router.get('/delete',deleteData)
-router.post('/update',updateData)
+router.get('/update',updateData)
 
 module.exports = router
