@@ -5,6 +5,7 @@ const login = require('./controller/login')
 const subscribeData = require ('./controller/subscribe/subscribe')
 const ContactData = require('./controller/contact/contact')
 const deleteData = require('./controller/contact/delete')
+const updateData = require('./controller/contact/update')
 
 const router = express.Router()
 router.get('/', (req, res) => {
@@ -17,5 +18,6 @@ router.post('/login', login)
 router.get('/subscribe',subscribeData)
 router.get('/contact',ContactData)
 router.get('/delete',deleteData)
+router.post('/update',updateData)
 
 module.exports = router
