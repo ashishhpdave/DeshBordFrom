@@ -16,6 +16,6 @@ router.post('/signup', signup)
 router.post('/login', login)
 router.get('/subscribe',subscribeData)
 router.get('/contact',ContactData)
-router.post('/delete',deleteData)
+router.get('/delete',deleteData)
 
 module.exports = router
