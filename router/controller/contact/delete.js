@@ -1,9 +1,9 @@
-const { dbmodel } = require("../../../module.js")
+const { contactModel } = require("../../../module.js")
 
 async function deleteData(req,res) {
 try {
-    const isdelete = await dbmodel.deleteOne({email : req.body.email,password:req.body.password})
-    if(!isdelete.deletedCount){
+    const isdelete = await contactModel.deleteOne({email : req.body.email})
+    if(!isdelete){
         throw new Error("Data not Delete")
     }
     res.status(200).json({
