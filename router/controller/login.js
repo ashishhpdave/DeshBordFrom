@@ -5,7 +5,7 @@ const PRIVATEKEY = process.env.PRIVATEKEY
 async function login(req, res) {
     const data = req.body
     try {
-        const token = jwt.sign({ email: data.email }, prifvatekay)
+        const token = jwt.sign({ email: data.email }, PRIVATEKEY)
         const isExist = await dbmodel.updateOne({ email: req.body.email, password: req.body.password }, { token })
         // console.log(isExist)
         if (!isExist.modifiedCount) {
