@@ -1,10 +1,10 @@
 const { dbmodel } = require("../../module.js")
 const jwt = require('jsonwebtoken')
-const prifvatekay = "jasbkfghaihkaifasdbBHDBfjaglidsfjaksjd"
+const PRIVATEKEY = process.env.PRIVATEKEY
 
 async function signup(req, res) {
     const data = req.body
-    const token = jwt.sign({ email: data.email }, prifvatekay)
+    const token = jwt.sign({ email: data.email }, PRIVATEKEY)
 
     try {
         const dataModel = new dbmodel({

@@ -21,5 +21,5 @@ async function ContactData(req,res) {
     })
  }
 }
-
+  
 module.exports = ContactData
