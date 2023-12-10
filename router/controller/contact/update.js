@@ -13,7 +13,7 @@ async function updateData(req,res){
     } catch (error) {
         res.status(409).json({
             status : false,
-            msg : error.message
+            msg : error.message 
         })
     }
 }

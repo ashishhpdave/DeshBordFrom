@@ -12,14 +12,14 @@ async function login(req, res) {
             throw new Error("Data not Exist")
         }
         res.status(200).json({
-            msg: "Login Successfully",
+            message: "Login Successfully",
             status: true,
             token
         })
-    } catch (err) {
+    } catch (error) {
         res.status(409).json({
             status: false,
-            msg: err.message
+            message: error.message
         })
     }
 }
