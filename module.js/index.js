@@ -84,9 +84,73 @@ const ContactSchema = new mongoose.Schema({
     }
   })
 
+// Billing API
+
+const BilingSchema = new mongoose.Schema({
+
+  f_name: {
+    type: String,
+    required: true
+  },
+
+  l_name: {
+    type: String,
+    required: true
+  },
+
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  message: {
+    type: String,
+    required: true
+  },
+  Country: {
+    type: String,
+    required: true
+  },
+  Company_Name: {
+    type: String,
+    required: true
+  },
+  Address: {
+    type: String,
+    required: true
+  },
+  Apartment: {
+    type: String,
+    required: true
+  },
+  State_Country: {
+    type: String,
+    required: true
+  },
+
+  Posta: {
+    type: String,
+    required: true
+  },
+  Email_Address: {
+    type: String,
+    required: true
+  },
+  Phone: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now()
+  }
+})
+
 const contactModel = new mongoose.model('contactsub',ContactSchema)
 const subscribeModel = new mongoose.model('subscribe',SubscribeSchema)
+const BilingModel  = new mongoose.model('biling',BilingSchema)
 
 const dbmodel = new mongoose.model('adminAuth', schema)
 
-module.exports = { dbmodel,subscribeModel,contactModel }
+
+module.exports = { dbmodel,subscribeModel,contactModel,BilingModel}
